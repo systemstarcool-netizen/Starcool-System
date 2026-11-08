@@ -1,0 +1,1658 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08060f">
+<title>Star Cool System | Home Appliance Services</title>
+<meta name="description" content="RO, AC, washing machine and refrigerator repair services by Star Cool System.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg:#08060f;
+    --surface:#100c1c;
+    --purple:#8b5cf6;
+    --purple-light:#c4b5fd;
+    --text:#f8f7ff;
+    --muted:#aaa4bd;
+    --border:rgba(181,151,255,.17);
+    --radius:22px;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+    scroll-padding-top:90px;
+}
+
+body {
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.65;
+    overflow-x:hidden;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+button {
+    font:inherit;
+}
+
+.container {
+    width:min(1150px,90%);
+    margin:auto;
+}
+
+.section {
+    padding:95px 0;
+}
+
+h1,h2,h3,.logo {
+    font-family:'Outfit',sans-serif;
+}
+
+h2 {
+    font-size:clamp(2rem,4vw,3.1rem);
+    line-height:1.18;
+    margin-bottom:18px;
+}
+
+.gradient-text {
+    background:linear-gradient(100deg,#ddd6fe,#a78bfa,#8b5cf6);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.eyebrow {
+    display:inline-block;
+    color:var(--purple-light);
+    font-size:.78rem;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+}
+
+.section-heading {
+    max-width:720px;
+    margin:0 auto 45px;
+    text-align:center;
+}
+
+.section-heading p {
+    color:var(--muted);
+}
+
+/* NAVIGATION */
+
+.navbar {
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(8,6,15,.95);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-inner {
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.05rem;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.logo span {
+    color:var(--purple-light);
+}
+
+.logo-mark {
+    width:43px;
+    height:43px;
+    display:grid;
+    place-items:center;
+    border-radius:14px;
+    font-size:1.5rem;
+    background:linear-gradient(135deg,#a78bfa,#6d28d9);
+    box-shadow:0 0 25px rgba(139,92,246,.3);
+}
+
+.nav-links {
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.nav-links a {
+    color:var(--muted);
+    font-size:.88rem;
+    transition:.25s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color:var(--purple-light);
+}
+
+.nav-cta {
+    padding:11px 17px;
+    border-radius:11px;
+    background:var(--purple);
+    color:white!important;
+    font-weight:700;
+}
+
+.menu-toggle {
+    display:none;
+    padding:7px 12px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:transparent;
+    color:white;
+    font-size:1.3rem;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero {
+    padding:85px 0 75px;
+    overflow:hidden;
+    background:
+    radial-gradient(ellipse at 80% 40%,rgba(107,55,201,.2),transparent 38%),
+    radial-gradient(ellipse at 5% 10%,rgba(75,40,130,.12),transparent 30%);
+}
+
+.hero-grid {
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    align-items:center;
+    gap:45px;
+}
+
+.hero-copy {
+    position:relative;
+    z-index:2;
+}
+
+.hero-label {
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:8px 13px;
+    border:1px solid var(--border);
+    border-radius:50px;
+    color:var(--purple-light);
+    background:rgba(139,92,246,.07);
+    font-size:.78rem;
+    margin-bottom:24px;
+}
+
+.status-dot {
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#a78bfa;
+    box-shadow:0 0 12px #a78bfa;
+}
+
+.hero h1 {
+    font-size:clamp(2.8rem,5vw,4.6rem);
+    line-height:1.06;
+    letter-spacing:-1.8px;
+    margin-bottom:23px;
+}
+
+.hero-copy>p {
+    max-width:530px;
+    color:var(--muted);
+    margin-bottom:28px;
+}
+
+.hero-buttons {
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-bottom:30px;
+}
+
+.btn {
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    gap:9px;
+    padding:13px 20px;
+    border-radius:12px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.btn-primary {
+    background:var(--purple);
+    color:white;
+    box-shadow:0 8px 25px rgba(139,92,246,.2);
+}
+
+.btn-primary:hover {
+    background:#7540e8;
+    transform:translateY(-2px);
+}
+
+.btn-secondary {
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.025);
+}
+
+.btn-secondary:hover {
+    border-color:var(--purple);
+    background:rgba(139,92,246,.08);
+}
+
+.hero-points {
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    color:#d8d2e7;
+    font-size:.82rem;
+}
+
+.hero-points span::before {
+    content:"✓";
+    color:var(--purple-light);
+    font-weight:800;
+    margin-right:6px;
+}
+
+/* AC ANIMATION */
+
+.ac-scene {
+    min-height:400px;
+    position:relative;
+    display:grid;
+    place-items:center;
+    isolation:isolate;
+}
+
+.ac-glow {
+    position:absolute;
+    width:290px;
+    height:290px;
+    background:rgba(124,58,237,.25);
+    filter:blur(75px);
+    border-radius:50%;
+    z-index:-1;
+    animation:glowPulse 4s ease-in-out infinite;
+}
+
+.ac-unit {
+    width:min(370px,95%);
+    position:relative;
+    z-index:2;
+    padding:23px 24px 20px;
+    border:1px solid white;
+    border-radius:22px;
+    background:linear-gradient(145deg,#faf9ff,#c8c5d6);
+    box-shadow:0 35px 75px rgba(0,0,0,.4);
+    animation:acFloat 5s ease-in-out infinite;
+}
+
+.ac-top {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#252033;
+    font-size:.65rem;
+    font-weight:800;
+    letter-spacing:1.1px;
+    margin-bottom:21px;
+}
+
+.ac-light {
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#7c3aed;
+    box-shadow:0 0 10px #8b5cf6;
+}
+
+.ac-display {
+    position:absolute;
+    top:55px;
+    right:30px;
+    color:#7540e8;
+    font-size:.7rem;
+    font-weight:800;
+}
+
+.ac-vent {
+    height:53px;
+    border-radius:8px;
+    background:linear-gradient(180deg,#30283f,#51475f);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    padding:8px 15px;
+    overflow:hidden;
+}
+
+.ac-vent span {
+    display:block;
+    height:2px;
+    background:linear-gradient(90deg,#8b8299,#c7bfd4,#6b627b);
+}
+
+.airflow {
+    position:absolute;
+    width:85%;
+    top:65%;
+    display:flex;
+    justify-content:space-around;
+    gap:20px;
+    z-index:1;
+}
+
+.airflow span {
+    width:3px;
+    height:105px;
+    border-radius:10px;
+    background:linear-gradient(to bottom,rgba(167,139,250,.9),transparent);
+    animation:airFlow 2.2s ease-in-out infinite;
+}
+
+.airflow span:nth-child(2) {
+    animation-delay:.35s;
+    height:130px;
+}
+
+.airflow span:nth-child(3) {
+    animation-delay:.7s;
+    height:115px;
+}
+
+.airflow span:nth-child(4) {
+    animation-delay:1.05s;
+    height:135px;
+}
+
+.airflow span:nth-child(5) {
+    animation-delay:.55s;
+    height:100px;
+}
+
+.floating-tag {
+    position:absolute;
+    z-index:3;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:11px 14px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    background:rgba(18,13,30,.95);
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    font-size:.78rem;
+    animation:tagFloat 4s ease-in-out infinite;
+}
+
+.floating-tag strong,
+.floating-tag small {
+    display:block;
+}
+
+.floating-tag small {
+    color:var(--muted);
+}
+
+.tag-icon {
+    width:36px;
+    height:36px;
+    display:grid;
+    place-items:center;
+    border-radius:10px;
+    background:rgba(139,92,246,.16);
+    color:var(--purple-light);
+    font-size:1.2rem;
+}
+
+.tag-left {
+    left:-8px;
+    top:65px;
+}
+
+.tag-right {
+    right:-7px;
+    bottom:40px;
+    animation-delay:1s;
+}
+
+@keyframes acFloat {
+    0%,100% {transform:translateY(0) rotate(-1deg);}
+    50% {transform:translateY(-10px) rotate(0);}
+}
+
+@keyframes airFlow {
+    0% {transform:translateY(-10px) scaleY(.7);opacity:0;}
+    35% {opacity:1;}
+    100% {transform:translateY(65px) scaleY(1.1);opacity:0;}
+}
+
+@keyframes glowPulse {
+    0%,100% {opacity:.65;transform:scale(.9);}
+    50% {opacity:1;transform:scale(1.12);}
+}
+
+@keyframes tagFloat {
+    0%,100% {transform:translateY(0);}
+    50% {transform:translateY(-8px);}
+}
+
+@keyframes rotateOrbit {
+    to {transform:rotate(360deg);}
+}
+
+/* APPLIANCES */
+
+.appliances {
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    background:#0d0916;
+}
+
+.appliance-grid {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.appliance-item {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:10px;
+    padding:24px 12px;
+    min-height:150px;
+    border:1px solid var(--border);
+    border-radius:17px;
+    background:rgba(255,255,255,.018);
+    transition:.25s;
+}
+
+.appliance-item:hover {
+    transform:translateY(-5px);
+    border-color:var(--purple);
+    background:rgba(139,92,246,.08);
+}
+
+.appliance-icon {
+    font-size:2.2rem;
+    line-height:1.2;
+}
+
+.appliance-item strong {
+    font-size:.9rem;
+}
+
+/* SERVICES */
+
+.service-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.service-card {
+    position:relative;
+    padding:28px;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    background:linear-gradient(145deg,#151020,#0d0a16);
+    transition:.3s;
+    overflow:hidden;
+}
+
+.service-card:hover {
+    transform:translateY(-6px);
+    border-color:rgba(167,139,250,.6);
+    box-shadow:0 20px 45px rgba(0,0,0,.2);
+}
+
+.service-icon {
+    width:54px;
+    height:54px;
+    display:grid;
+    place-items:center;
+    border-radius:15px;
+    background:rgba(139,92,246,.13);
+    border:1px solid var(--border);
+    color:var(--purple-light);
+    font-size:1.65rem;
+    margin-bottom:20px;
+}
+
+.service-card h3 {
+    font-size:1.2rem;
+    margin-bottom:10px;
+}
+
+.service-card p {
+    color:var(--muted);
+    font-size:.9rem;
+    margin-bottom:18px;
+}
+
+.service-link {
+    color:var(--purple-light);
+    font-size:.87rem;
+    font-weight:700;
+}
+
+/* WHY CHOOSE US */
+
+.why-section {
+    background:linear-gradient(180deg,var(--bg),#0c0915);
+}
+
+.why-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.why-card {
+    padding:26px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:rgba(255,255,255,.02);
+}
+
+.why-card>span {
+    display:block;
+    font-size:1.8rem;
+    margin-bottom:14px;
+}
+
+.why-card h3 {
+    margin-bottom:8px;
+    font-size:1.1rem;
+}
+
+.why-card p {
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:65px;
+    align-items:center;
+}
+
+.about-visual {
+    min-height:360px;
+    display:grid;
+    place-items:center;
+    position:relative;
+    border:1px solid var(--border);
+    border-radius:28px;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at center,rgba(139,92,246,.23),transparent 50%),
+    linear-gradient(145deg,#171027,#0c0915);
+}
+
+.about-emblem {
+    width:155px;
+    height:155px;
+    display:grid;
+    place-items:center;
+    border-radius:38px;
+    border:1px solid rgba(196,181,253,.5);
+    background:linear-gradient(145deg,#a78bfa,#6d28d9);
+    box-shadow:0 0 75px rgba(139,92,246,.35);
+    font-size:5rem;
+    animation:tagFloat 5s ease-in-out infinite;
+}
+
+.orbit {
+    position:absolute;
+    width:250px;
+    height:250px;
+    border:1px solid rgba(196,181,253,.2);
+    border-radius:50%;
+}
+
+.orbit-two {
+    width:330px;
+    height:330px;
+    border-style:dashed;
+    animation:rotateOrbit 25s linear infinite;
+}
+
+.about-copy>p {
+    color:var(--muted);
+    margin-bottom:24px;
+}
+
+.about-points {
+    display:grid;
+    gap:17px;
+    margin-bottom:28px;
+}
+
+.about-point {
+    display:flex;
+    align-items:flex-start;
+    gap:13px;
+}
+
+.check-icon {
+    width:27px;
+    height:27px;
+    flex-shrink:0;
+    display:grid;
+    place-items:center;
+    border-radius:9px;
+    background:rgba(139,92,246,.17);
+    color:var(--purple-light);
+    font-weight:800;
+}
+
+.about-point strong {
+    display:block;
+    margin-bottom:3px;
+}
+
+.about-point p {
+    color:var(--muted);
+    font-size:.89rem;
+}
+
+/* CONTACT */
+
+.contact-section {
+    padding:25px 0 95px;
+}
+
+.contact-banner {
+    position:relative;
+    padding:58px 30px;
+    border:1px solid rgba(196,181,253,.25);
+    border-radius:28px;
+    text-align:center;
+    overflow:hidden;
+    background:
+    radial-gradient(ellipse at 50% 120%,rgba(139,92,246,.25),transparent 60%),
+    linear-gradient(145deg,#171027,#100b1b);
+}
+
+.contact-banner p {
+    max-width:620px;
+    margin:0 auto 25px;
+    color:var(--muted);
+}
+
+/* FOOTER */
+
+footer {
+    border-top:1px solid var(--border);
+    background:#06040b;
+}
+
+.footer-main {
+    padding:45px 0 35px;
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand p {
+    max-width:340px;
+    color:var(--muted);
+    font-size:.89rem;
+    margin-top:17px;
+}
+
+.footer-column h3 {
+    font-size:1rem;
+    margin-bottom:16px;
+}
+
+.footer-links {
+    display:grid;
+    gap:10px;
+    list-style:none;
+}
+
+.footer-links a {
+    color:var(--muted);
+    font-size:.89rem;
+}
+
+.footer-links a:hover {
+    color:var(--purple-light);
+}
+
+.footer-bottom {
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    padding:20px 0;
+    border-top:1px solid var(--border);
+    color:#8d869e;
+    font-size:.82rem;
+}
+
+.footer-bottom a {
+    color:var(--purple-light);
+}
+
+/* ANIMATIONS */
+
+.reveal {
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .7s ease,transform .7s ease;
+}
+
+.reveal.visible {
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px) {
+    .hero-grid {
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .hero-copy {
+        text-align:center;
+    }
+
+    .hero-copy>p {
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons,
+    .hero-points {
+        justify-content:center;
+    }
+
+    .ac-scene {
+        width:min(550px,100%);
+        margin:auto;
+    }
+
+    .about-grid {
+        gap:35px;
+    }
+}
+
+@media(max-width:760px) {
+    .section {
+        padding:72px 0;
+    }
+
+    .nav-inner {
+        min-height:70px;
+    }
+
+    .logo {
+        font-size:.9rem;
+        gap:8px;
+    }
+
+    .logo-mark {
+        width:38px;
+        height:38px;
+    }
+
+    .menu-toggle {
+        display:block;
+    }
+
+    .nav-links {
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        right:0;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:12px 5% 20px;
+        border-bottom:1px solid var(--border);
+        background:rgba(8,6,15,.98);
+    }
+
+    .nav-links.open {
+        display:flex;
+    }
+
+    .nav-links a {
+        display:block;
+        padding:12px 0;
+    }
+
+    .nav-links .nav-cta {
+        display:inline-block;
+        margin-top:8px;
+        padding:11px 15px;
+    }
+
+    .hero {
+        padding:65px 0 45px;
+    }
+
+    .hero h1 {
+        font-size:clamp(2.6rem,9vw,4rem);
+        letter-spacing:-1px;
+    }
+
+    .hero-points {
+        gap:10px;
+        font-size:.76rem;
+    }
+
+    .ac-scene {
+        min-height:340px;
+    }
+
+    .ac-unit {
+        width:min(340px,90%);
+    }
+
+    .tag-left {
+        left:0;
+        top:35px;
+    }
+
+    .tag-right {
+        right:0;
+        bottom:15px;
+    }
+
+    .appliance-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .service-grid,
+    .why-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid {
+        grid-template-columns:1fr;
+    }
+
+    .about-visual {
+        min-height:300px;
+    }
+
+    .about-emblem {
+        width:130px;
+        height:130px;
+        font-size:4rem;
+    }
+
+    .orbit {
+        width:220px;
+        height:220px;
+    }
+
+    .orbit-two {
+        width:285px;
+        height:285px;
+    }
+
+    .footer-main {
+        grid-template-columns:1fr 1fr;
+        gap:30px 20px;
+    }
+
+    .footer-brand {
+        grid-column:1/-1;
+    }
+}
+
+@media(max-width:480px) {
+    .appliance-grid {
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .appliance-item {
+        min-height:120px;
+    }
+
+    .service-grid,
+    .why-grid {
+        grid-template-columns:1fr;
+    }
+
+    .hero-buttons {
+        flex-direction:column;
+    }
+
+    .hero-buttons .btn {
+        width:100%;
+    }
+
+    .floating-tag {
+        padding:8px;
+        font-size:.69rem;
+    }
+
+    .tag-icon {
+        width:30px;
+        height:30px;
+    }
+
+    .ac-scene {
+        transform:scale(.9);
+        margin:-15px 0;
+    }
+
+    .contact-banner {
+        padding:42px 20px;
+    }
+
+    .footer-main {
+        grid-template-columns:1fr;
+    }
+
+    .footer-brand {
+        grid-column:auto;
+    }
+
+    .footer-bottom {
+        flex-direction:column;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        scroll-behavior:auto!important;
+        transition-duration:.01ms!important;
+    }
+
+    .reveal {
+        opacity:1;
+        transform:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="navbar">
+    <div class="container nav-inner">
+
+        <a href="Home.html" class="logo">
+            <div class="logo-mark">❄</div>
+            <div>STAR COOL <span>SYSTEM</span></div>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="navLinks">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a class="active" href="Home.html">Home</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a class="nav-cta" href="contact.html#enquiry">Book a Service ↗</a></li>
+        </ul>
+
+    </div>
+</header>
+
+<main>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+    <div class="container hero-grid">
+
+        <div class="hero-copy">
+
+            <div class="hero-label">
+                <span class="status-dot"></span>
+                Your Home Appliance Service Partner
+            </div>
+
+            <h1>
+                Expert Repairs.<br>
+                Reliable Service.<br>
+                <span class="gradient-text">Complete Peace of Mind  .</span>
+            </h1>
+
+            <p>
+                From RO water purifiers and air conditioners to
+                refrigerators and washing machines, Star Cool System
+                provides dedicated repair and maintenance services
+                to keep your essential home appliances working smoothly.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="contact.html#enquiry" class="btn btn-primary">
+                    Request a Service ↗
+                </a>
+
+                <a href="#appliances" class="btn btn-secondary">
+                    Explore Appliances ↓
+                </a>
+            </div>
+
+            <div class="hero-points">
+                <span>RO Water Purifier Service</span>
+                <span>AC Repair & Maintenance</span>
+                <span>Home Appliance Support</span>
+            </div>
+
+        </div>
+
+        <!-- AC ILLUSTRATION -->
+
+        <div class="ac-scene">
+
+            <div class="ac-glow"></div>
+
+            <div class="floating-tag tag-left">
+                <div class="tag-icon">❄</div>
+                <div>
+                    <strong>Cooling Care</strong>
+                    <small>Comfort starts here</small>
+                </div>
+            </div>
+
+            <div class="ac-unit">
+
+                <div class="ac-top">
+                    <span>STAR COOL SYSTEM</span>
+                    <span class="ac-light"></span>
+                </div>
+
+                <div class="ac-display">18°C</div>
+
+                <div class="ac-vent">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+            <div class="airflow">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="floating-tag tag-right">
+                <div class="tag-icon">⚙</div>
+                <div>
+                    <strong>Home Appliance Care</strong>
+                    <small>Four dedicated services</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- APPLIANCES SECTION -->
+
+<section class="section appliances" id="appliances">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+            <span class="eyebrow">Our Appliance Range</span>
+
+            <h2>
+                We Care for Your
+                <span class="gradient-text">Home Appliances</span>
+            </h2>
+
+            <p>
+                Explore our four appliance service categories.
+                Contact us to confirm service availability for
+                your model and issue.
+            </p>
+        </div>
+
+        <div class="appliance-grid">
+
+            <a class="appliance-item reveal"
+               href="Services.html#ro-service">
+                <span class="appliance-icon">💧</span>
+                <strong>RO Water Purifier</strong>
+            </a>
+
+            <a class="appliance-item reveal"
+               href="Services.html#ac-service">
+                <span class="appliance-icon">❄️</span>
+                <strong>Air Conditioner</strong>
+            </a>
+
+            <a class="appliance-item reveal"
+               href="Services.html#washing-machine-service">
+                <span class="appliance-icon">🧺</span>
+                <strong>Washing Machine</strong>
+            </a>
+
+            <a class="appliance-item reveal"
+               href="Services.html#refrigerator-service">
+                <span class="appliance-icon">🧊</span>
+                <strong>Refrigerator</strong>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES SECTION -->
+
+<section class="section" id="services">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span class="eyebrow">Our Services</span>
+
+            <h2>
+                Complete Care for Your
+                <span class="gradient-text">Appliances</span>
+            </h2>
+
+            <p>
+                Whether you need troubleshooting, repair or
+                routine maintenance, we can help you find
+                the right service.
+            </p>
+
+        </div>
+
+        <div class="service-grid">
+
+            <!-- RO SERVICE -->
+
+            <article class="service-card reveal"
+                     id="ro-service">
+
+                <div class="service-icon">💧</div>
+
+                <h3>RO Water Purifier Repair</h3>
+
+                <p>
+                    RO water purifier troubleshooting, filter and
+                    membrane replacement, water leakage checks,
+                    low water flow support and routine maintenance.
+                </p>
+
+                <a href="contact.html" class="service-link">
+                    Enquire Now →
+                </a>
+
+            </article>
+
+            <!-- AC SERVICE -->
+
+            <article class="service-card reveal"
+                     id="ac-service">
+
+                <div class="service-icon">❄️</div>
+
+                <h3>AC Repair & Service</h3>
+
+                <p>
+                    Air conditioner troubleshooting, cleaning,
+                    maintenance, cooling-performance checks
+                    and installation support.
+                </p>
+
+                <a href="contact.html" class="service-link">
+                    Enquire Now →
+                </a>
+
+            </article>
+
+            <!-- WASHING MACHINE SERVICE -->
+
+            <article class="service-card reveal"
+                     id="washing-machine-service">
+
+                <div class="service-icon">🧺</div>
+
+                <h3>Washing Machine Repair</h3>
+
+                <p>
+                    Support for drainage, spinning, water intake,
+                    unusual noise and other washing machine issues.
+                </p>
+
+                <a href="contact.html" class="service-link">
+                    Enquire Now →
+                </a>
+
+            </article>
+
+            <!-- REFRIGERATOR SERVICE -->
+
+            <article class="service-card reveal"
+                     id="refrigerator-service">
+
+                <div class="service-icon">🧊</div>
+
+                <h3>Refrigerator Repair & Service</h3>
+
+                <p>
+                    Help with refrigerator cooling issues,
+                    unusual operation, maintenance and
+                    reported faults.
+                </p>
+
+                <a href="contact.html" class="service-link">
+                    Enquire Now →
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="section why-section">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span class="eyebrow">Why Star Cool System?</span>
+
+            <h2>
+                Appliance Care Made
+                <span class="gradient-text">Simple</span>
+            </h2>
+
+            <p>
+                A clear, convenient service experience for the
+                appliances you depend on every day.
+            </p>
+
+        </div>
+
+        <div class="why-grid">
+
+            <article class="why-card reveal">
+                <span>🏠</span>
+
+                <h3>Four Focused Services</h3>
+
+                <p>
+                    Get service information for RO water purifiers,
+                    ACs, washing machines and refrigerators
+                    in one place.
+                </p>
+            </article>
+
+            <article class="why-card reveal">
+                <span>🛠️</span>
+
+                <h3>Practical Solutions</h3>
+
+                <p>
+                    Describe the issue and get guidance on
+                    the next steps for your appliance.
+                </p>
+            </article>
+
+            <article class="why-card reveal">
+                <span>💬</span>
+
+                <h3>Easy Enquiries</h3>
+
+                <p>
+                    Contact the team to discuss your appliance,
+                    its model and the service you need.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT SECTION -->
+
+<section class="section" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-visual reveal">
+            <div class="orbit"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="about-emblem">❄</div>
+        </div>
+
+        <div class="about-copy reveal">
+
+            <span class="eyebrow">About Star Cool System</span>
+
+            <h2>
+                More Than Cooling.
+                <span class="gradient-text">
+                    Complete Appliance Care.
+                </span>
+            </h2>
+
+            <p>
+                Star Cool System focuses on repairing and maintaining
+                four essential home appliances: RO water purifiers,
+                air conditioners, washing machines and refrigerators.
+                Our aim is to help customers understand their options
+                and get the service their appliances need.
+            </p>
+
+            <div class="about-points">
+
+                <div class="about-point">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <strong>Four Dedicated Service Categories</strong>
+                        <p>
+                            Find service options for your essential
+                            home appliances in one convenient place.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-point">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <strong>Customer-Focused Approach</strong>
+                        <p>
+                            We aim to understand your concerns
+                            and service requirements.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-point">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <strong>Clear Communication</strong>
+                        <p>
+                            Discuss your appliance problem and
+                            confirm service availability before booking.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="contact.html" class="btn btn-primary">
+                Contact Our Team ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="contact-banner reveal">
+
+            <span class="eyebrow">We're Here to Help</span>
+
+            <h2>
+                Which Appliance Needs
+                <span class="gradient-text">Attention?</span>
+            </h2>
+
+            <p>
+                Tell us whether you need help with an RO water purifier,
+                air conditioner, washing machine or refrigerator.
+                Contact Star Cool System to discuss your requirements
+                and confirm service availability.
+            </p>
+
+            <a href="contact.html" class="btn btn-primary">
+                Contact Us Today ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a href="Home.html" class="logo">
+                    <div class="logo-mark">❄</div>
+                    <div>STAR COOL <span>SYSTEM</span></div>
+                </a>
+
+                <p>
+                    Your home appliance repair partner for
+                    RO water purifiers, air conditioners,
+                    washing machines and refrigerators.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul class="footer-links">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="About.html">About Us</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Our Appliances</h3>
+
+                <ul class="footer-links">
+                    <li><a href="Services.html#ro-service">RO Water Purifier</a></li>
+                    <li><a href="Services.html#ac-service">Air Conditioner</a></li>
+                    <li><a href="Services.html#washing-machine-service">Washing Machine</a></li>
+                    <li><a href="Services.html#refrigerator-service">Refrigerator</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="year"></span>
+                Star Cool System. All rights reserved.
+            </p>
+
+            <a href="#home">Back to Top ↑</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+
+// CURRENT YEAR
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+// MOBILE NAVIGATION
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+    );
+
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+
+});
+
+
+// CLOSE MOBILE MENU AFTER CLICK
+
+navLinks.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded","false");
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+
+        menuToggle.textContent = "☰";
+
+    });
+
+});
+
+
+// SCROLL REVEAL ANIMATION
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+
+    const revealObserver =
+        new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            { threshold:0.12 }
+        );
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+
+} else {
+
+    revealElements.forEach(element => {
+        element.classList.add("visible");
+    });
+
+}
+
+</script>
+
+</body>
+</html>
+

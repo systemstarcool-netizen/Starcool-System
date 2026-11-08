@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08060f">
+<title>Our Services | Star Cool System</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #08060f;
+    --surface: #110d1b;
+    --purple: #9333ea;
+    --light-purple: #c084fc;
+    --text: #f8f5ff;
+    --muted: #aaa2b9;
+    --border: rgba(192,132,252,0.16);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1160px, 90%);
+    margin: auto;
+}
+
+/* NAVBAR */
+
+.navbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8,6,15,0.88);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-content {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    color: white;
+}
+
+.logo span {
+    color: var(--light-purple);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 13px;
+    color: var(--muted);
+    transition: .3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--light-purple);
+}
+
+.nav-cta {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #9333ea, #6b21a8);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+}
+
+/* HERO */
+
+.services-hero {
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 80% 45%, rgba(147,51,234,.20), transparent 45%),
+        radial-gradient(ellipse at 15% 80%, rgba(107,33,168,.12), transparent 40%);
+}
+
+.hero-content {
+    max-width: 720px;
+    padding: 85px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--light-purple);
+    background: rgba(147,51,234,.12);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    padding: 9px 15px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.hero-content h1 {
+    font-size: clamp(38px, 6vw, 66px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.hero-content h1 span {
+    color: var(--light-purple);
+}
+
+.hero-content p {
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* FLOATING SYMBOL */
+
+.hero-art {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 260px;
+    height: 260px;
+    display: grid;
+    place-items: center;
+}
+
+.cold-orb {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 68px;
+    background: radial-gradient(circle, #9333ea, #35105b 70%);
+    box-shadow: 0 0 50px rgba(147,51,234,.5);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.floating-item {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    background: rgba(25,16,39,.95);
+    border: 1px solid rgba(192,132,252,.35);
+    border-radius: 17px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.3);
+}
+
+.item-one { top: 0; left: 95px; animation: float 3s infinite ease-in-out; }
+.item-two { top: 65px; right: 0; animation: float 3.5s infinite ease-in-out; }
+.item-three { bottom: 5px; left: 25px; animation: float 4s infinite ease-in-out; }
+.item-four { bottom: 15px; right: 20px; animation: float 3.7s infinite ease-in-out; }
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-13px); }
+}
+
+@keyframes pulse {
+    0%,100% { transform: scale(1); box-shadow: 0 0 35px rgba(147,51,234,.35); }
+    50% { transform: scale(1.06); box-shadow: 0 0 65px rgba(147,51,234,.65); }
+}
+
+/* COMMON SECTION */
+
+section {
+    padding: 85px 0;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 48px;
+}
+
+.section-heading h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 15px;
+}
+
+.section-heading h2 span {
+    color: var(--light-purple);
+}
+
+.section-heading p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* SERVICE CARDS */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.service-card {
+    background: linear-gradient(145deg, #171021, #0e0a16);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: .35s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(192,132,252,.55);
+    box-shadow: 0 15px 40px rgba(147,51,234,.12);
+}
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: rgba(147,51,234,.10);
+    filter: blur(35px);
+    right: -50px;
+    top: -50px;
+}
+
+.service-icon {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    font-size: 32px;
+    background: rgba(147,51,234,.15);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    margin-bottom: 23px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 13px;
+}
+
+.service-card > p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 23px;
+}
+
+.service-card h4 {
+    color: var(--light-purple);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 13px;
+}
+
+.service-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+
+.service-list li {
+    color: #d5cde1;
+    font-size: 13px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.6;
+}
+
+.service-list li span {
+    color: var(--light-purple);
+    font-weight: 800;
+}
+
+/* EXPERIENCE SECTION */
+
+.experience-section {
+    background: linear-gradient(180deg, #0b0812, #100a19);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.experience-content h2 {
+    font-size: clamp(28px, 4vw, 39px);
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.experience-content h2 span {
+    color: var(--light-purple);
+}
+
+.experience-content p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 17px;
+}
+
+.experience-points {
+    display: grid;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.experience-point {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.point-icon {
+    min-width: 37px;
+    height: 37px;
+    border-radius: 10px;
+    background: rgba(147,51,234,.16);
+    display: grid;
+    place-items: center;
+    color: var(--light-purple);
+}
+
+.experience-point h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.experience-point p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.experience-visual {
+    min-height: 350px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    background:
+        radial-gradient(circle at center, rgba(147,51,234,.24), transparent 60%),
+        #130d1e;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-visual .big-icon {
+    font-size: 110px;
+    filter: drop-shadow(0 0 25px rgba(192,132,252,.4));
+    animation: float 4s ease-in-out infinite;
+}
+
+.visual-label {
+    position: absolute;
+    bottom: 28px;
+    color: var(--light-purple);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+/* WORKING PROCESS */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.process-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 27px;
+    border-radius: 15px;
+}
+
+.process-number {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--purple);
+    margin-bottom: 20px;
+}
+
+.process-card h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.process-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* CTA */
+
+.service-cta {
+    text-align: center;
+    padding: 70px 25px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background:
+        radial-gradient(ellipse at center, rgba(147,51,234,.20), transparent 70%),
+        #110d1b;
+}
+
+.service-cta h2 {
+    font-size: clamp(27px, 4vw, 38px);
+    margin-bottom: 15px;
+}
+
+.service-cta p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 27px;
+}
+
+.brand-btn {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #9333ea, #6b21a8);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.brand-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(147,51,234,.35);
+}
+
+/* FOOTER */
+
+.footer {
+    margin-top: 80px;
+    padding: 35px 0;
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    color: var(--light-purple);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .hero-art {
+        opacity: .22;
+        right: -20px;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-content {
+        padding: 17px 0;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 70px 0;
+    }
+
+    .hero-art {
+        transform: translateY(-50%) scale(.8);
+        right: -65px;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+    .service-card {
+        padding: 24px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="container nav-content">
+        <a href="Home.html" class="logo">STAR <span>COOL</span> SYSTEM</a>
+
+        <nav class="nav-links">
+            <a href="Home.html">Home</a>
+            <a href="About.html">About Us</a>
+            <a href="Services.html" class="active">Services</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <a href="contact.html" class="nav-cta">Get Service</a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="services-hero">
+    <div class="container">
+        <div class="hero-content">
+            <span class="section-tag">WHAT WE OFFER</span>
+
+            <h1>
+                Complete Care for Your
+                <span>Home Appliances.</span>
+            </h1>
+
+            <p>
+                From air conditioners to refrigerators, RO water purifiers
+                and washing machines, Star Cool System provides repair,
+                maintenance and service support to help keep your home
+                appliances working smoothly.
+            </p>
+        </div>
+    </div>
+
+    <div class="hero-art">
+        <div class="cold-orb">❄️</div>
+        <div class="floating-item item-one">❄️</div>
+        <div class="floating-item item-two">💧</div>
+        <div class="floating-item item-three">🧊</div>
+        <div class="floating-item item-four">🧺</div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="details" id="service">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">OUR EXPERTISE</span>
+            <h2>Services Designed for <span>Your Comfort</span></h2>
+            <p>
+                Explore our appliance service categories and the types of
+                repair and maintenance support available.
+            </p>
+        </div>
+
+        <div class="services-grid">
+
+            <!-- AC -->
+            <article class="service-card" id="ac-service">
+                <div class="service-icon">❄️</div>
+                <h3>Air Conditioner Service</h3>
+                <p>
+                    Keep your cooling system operating comfortably with
+                    AC inspection, cleaning, troubleshooting and repair support.
+                </p>
+
+                <h4>Service Details</h4>
+                <ul class="service-list">
+                    <li><span>✓</span> AC installation and setup support.</li>
+                    <li><span>✓</span> AC general servicing and cleaning.</li>
+                    <li><span>✓</span> Cooling performance inspection.</li>
+                    <li><span>✓</span> Water leakage troubleshooting.</li>
+                    <li><span>✓</span> AC electrical and component inspection.</li>
+                    <li><span>✓</span> Repair and maintenance support.</li>
+                </ul>
+            </article>
+
+            <!-- RO -->
+            <article class="service-card" id="ro-service">
+                <div class="service-icon">💧</div>
+                <h3>RO Water Purifier Service</h3>
+                <p>
+                    Get support for your RO water purifier to help maintain
+                    its operation and water purification system.
+                </p>
+
+                <h4>Service Details</h4>
+                <ul class="service-list">
+                    <li><span>✓</span> RO water purifier servicing.</li>
+                    <li><span>✓</span> Filter inspection and replacement support.</li>
+                    <li><span>✓</span> Water flow troubleshooting.</li>
+                    <li><span>✓</span> Leakage inspection.</li>
+                    <li><span>✓</span> Pump and system inspection.</li>
+                    <li><span>✓</span> General maintenance support.</li>
+                </ul>
+            </article>
+
+            <!-- FRIDGE -->
+            <article class="service-card" id="refrigerator-service">
+                <div class="service-icon">🧊</div>
+                <h3>Refrigerator Service</h3>
+                <p>
+                    Get help with refrigerator performance issues and
+                    common cooling problems through inspection and repair support.
+                </p>
+
+                <h4>Service Details</h4>
+                <ul class="service-list">
+                    <li><span>✓</span> Refrigerator cooling inspection.</li>
+                    <li><span>✓</span> Temperature-related troubleshooting.</li>
+                    <li><span>✓</span> Unusual noise inspection.</li>
+                    <li><span>✓</span> Door seal and gasket inspection.</li>
+                    <li><span>✓</span> Water leakage troubleshooting.</li>
+                    <li><span>✓</span> General repair and maintenance support.</li>
+                </ul>
+            </article>
+
+            <!-- WASHING MACHINE -->
+            <article class="service-card" id="washing-machine-service">
+                <div class="service-icon">🧺</div>
+                <h3>Washing Machine Service</h3>
+                <p>
+                    Maintain your washing machine with support for common
+                    washing, draining, spinning and operating issues.
+                </p>
+
+                <h4>Service Details</h4>
+                <ul class="service-list">
+                    <li><span>✓</span> Washing machine inspection.</li>
+                    <li><span>✓</span> Drainage problem troubleshooting.</li>
+                    <li><span>✓</span> Spinning issue inspection.</li>
+                    <li><span>✓</span> Water inlet problem troubleshooting.</li>
+                    <li><span>✓</span> Unusual sound and vibration inspection.</li>
+                    <li><span>✓</span> Repair and maintenance support.</li>
+                </ul>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience-section">
+    <div class="container experience-grid">
+
+        <div class="experience-content">
+            <span class="section-tag">OUR SERVICE APPROACH</span>
+
+            <h2>
+                Focused on 
+                <span>Quality, Care and Customer Experience.</span>
+            </h2>
+
+            <p>
+                At Star Cool System, every service request begins with
+                understanding the customer's appliance problem. We focus
+                on identifying the issue, explaining the service needed
+                and providing suitable repair and maintenance support.
+            </p>
+
+            <p>
+                Our approach is built around careful inspection,
+                clear communication and attention to the details
+                that matter in everyday appliance care.
+            </p>
+
+            <div class="experience-points">
+
+                <div class="experience-point">
+                    <div class="point-icon">🔍</div>
+                    <div>
+                        <h4>Careful Inspection</h4>
+                        <p>Understand the appliance issue before recommending service.</p>
+                    </div>
+                </div>
+
+                <div class="experience-point">
+                    <div class="point-icon">🛠️</div>
+                    <div>
+                        <h4>Practical Service Support</h4>
+                        <p>Focus on suitable repair and maintenance solutions.</p>
+                    </div>
+                </div>
+
+                <div class="experience-point">
+                    <div class="point-icon">🤝</div>
+                    <div>
+                        <h4>Customer Communication</h4>
+                        <p>Keep customers informed about the service process.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="experience-visual">
+            <div class="big-icon">🛠️</div>
+            <div class="visual-label">CARE • SERVICE • COMFORT</div>
+        </div>
+
+    </div>
+</section>
+
+<!-- WORKING PROCESS -->
+<section>
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-tag">HOW WE WORK</span>
+            <h2>A Simple <span>Service Process</span></h2>
+            <p>
+                We aim to make the service experience clear and convenient
+                from the first enquiry to the completion of the work.
+            </p>
+        </div>
+
+        <div class="process-grid">
+
+            <div class="process-card">
+                <div class="process-number">01</div>
+                <h3>Contact Us</h3>
+                <p>
+                    Tell us about your appliance and the issue you are facing.
+                    Share the service details through our contact page.
+                </p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">02</div>
+                <h3>Inspection and Discussion</h3>
+                <p>
+                    The appliance issue is discussed and inspected to
+                    understand the service requirements.
+                </p>
+            </div>
+
+            <div class="process-card">
+                <div class="process-number">03</div>
+                <h3>Service and Support</h3>
+                <p>
+                    Suitable repair or maintenance work is carried out
+                    based on the appliance condition and agreed service.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section>
+    <div class="container">
+        <div class="service-cta">
+            <span class="section-tag">NEED APPLIANCE SUPPORT?</span>
+
+            <h2>Let's Get Your Appliance Working.</h2>
+
+            <p>
+                Have an issue with your AC, RO water purifier,
+                refrigerator or washing machine?
+                Contact Star Cool System to discuss your service needs.
+            </p>
+
+            <a href="contact.html" class="brand-btn">Contact Us Today →</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container footer-content">
+
+        <p>© <span id="year"></span> Star Cool System. All Rights Reserved.</p>
+
+        <div class="footer-links">
+            <a href="Home.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

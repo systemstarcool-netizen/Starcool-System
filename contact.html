@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Star Cool System for AC, RO, refrigerator and washing machine services.">
+<title>Contact Us | Star Cool System</title>
+
+<style>
+:root {
+  --bg:#09070f;
+  --panel:#120d1c;
+  --panel2:#191124;
+  --purple:#8b5cf6;
+  --light:#c4b5fd;
+  --text:#f8f7ff;
+  --muted:#b9b2c9;
+  --border:#302343;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+.container{width:min(1160px,90%);margin:auto}
+
+.navbar{
+  position:sticky;top:0;z-index:20;
+  background:rgba(9,7,15,.96);
+  border-bottom:1px solid #241833;
+  backdrop-filter:blur(12px);
+}
+.nav-content{
+  min-height:78px;display:flex;
+  align-items:center;justify-content:space-between;gap:24px;
+}
+.logo{
+  display:inline-flex;align-items:center;gap:10px;
+  color:white;font-weight:800;letter-spacing:.4px;
+}
+.logo-mark{
+  display:grid;place-items:center;width:42px;height:42px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#a78bfa,#6d28d9);
+  font-size:1.45rem;
+}
+.logo span{color:var(--light)}
+.nav-links{display:flex;align-items:center;gap:25px}
+.nav-links a{color:#d4cde2;font-size:.94rem}
+.nav-links a:hover,.nav-links a.active{color:var(--light)}
+.nav-links .nav-cta{
+  padding:10px 16px;
+  background:linear-gradient(135deg,#8b5cf6,#6d28d9);
+  color:white;border-radius:9px;
+}
+.menu-toggle{
+  display:none;border:1px solid var(--border);
+  background:var(--panel);color:white;
+  border-radius:9px;padding:7px 12px;
+  cursor:pointer;font-size:1.2rem;
+}
+.eyebrow{
+  display:inline-block;margin-bottom:14px;
+  color:var(--light);font-size:.78rem;
+  font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;
+}
+.gradient-text{color:var(--light)}
+.brand-btn,.contact-link,.whatsapp-submit{
+  display:inline-flex;justify-content:center;align-items:center;
+  gap:8px;padding:13px 19px;
+  border:1px solid var(--purple);border-radius:10px;
+  background:linear-gradient(135deg,#8b5cf6,#6d28d9);
+  color:white;font-weight:700;cursor:pointer;
+  transition:.25s;
+}
+.brand-btn:hover,.contact-link:hover,.whatsapp-submit:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 28px rgba(139,92,246,.25);
+}
+.brand-cta{
+  padding:76px 20px;text-align:center;
+  background:radial-gradient(ellipse at top,#291443 0%,#0a0710 72%);
+  border-bottom:1px solid var(--border);
+}
+.brand-cta h1{
+  margin-bottom:14px;
+  font-size:clamp(2rem,4vw,3.15rem);
+  line-height:1.2;
+}
+.brand-cta p{
+  max-width:680px;margin:0 auto 22px;color:var(--muted);
+}
+.contact-section{padding:76px 0 82px}
+.section-heading{
+  max-width:720px;margin:0 auto 38px;text-align:center;
+}
+.section-heading h2,.form-info h2{
+  margin-bottom:12px;
+  font-size:clamp(1.9rem,4vw,2.8rem);
+  line-height:1.25;
+}
+.section-heading p{color:var(--muted)}
+.contact-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;
+}
+.contact-card{
+  padding:25px;border:1px solid var(--border);
+  border-radius:18px;
+  background:linear-gradient(145deg,var(--panel2),#0e0b15);
+  transition:.25s;
+}
+.contact-card:hover{
+  transform:translateY(-5px);border-color:var(--purple);
+}
+.contact-icon{
+  display:grid;place-items:center;width:54px;height:54px;
+  margin-bottom:18px;border-radius:15px;
+  background:rgba(139,92,246,.16);font-size:1.6rem;
+}
+.contact-card h3{margin-bottom:10px;font-size:1.2rem}
+.contact-card p{
+  min-height:105px;margin-bottom:20px;
+  color:var(--muted);font-size:.94rem;
+}
+.contact-link{padding:11px 14px;font-size:.9rem}
+
+.form-section{
+  padding:82px 0;background:#100b19;
+  border-top:1px solid #241833;
+  border-bottom:1px solid #241833;
+}
+.form-layout{
+  display:grid;grid-template-columns:.85fr 1.15fr;
+  gap:52px;align-items:start;
+}
+.form-info{padding-top:18px}
+.form-info>p{margin:12px 0 24px;color:var(--muted)}
+.form-info-list{display:grid;gap:13px;color:#ddd5ed}
+.form-info-list span{
+  display:block;padding:12px 14px;
+  border:1px solid var(--border);border-radius:10px;
+  background:rgba(255,255,255,.02);
+}
+.form-panel{
+  padding:30px;border:1px solid var(--border);
+  border-radius:20px;background:#0b0812;
+  box-shadow:0 20px 60px rgba(0,0,0,.18);
+}
+.form-panel h3{margin-bottom:5px;font-size:1.5rem}
+.form-panel>p{margin-bottom:23px;color:var(--muted)}
+.form-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.form-group{
+  display:flex;flex-direction:column;gap:8px;min-width:0;
+}
+.form-group.full{grid-column:1/-1}
+.form-group label{color:#eee8fa;font-size:.9rem;font-weight:700}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:13px 14px;
+  border:1px solid #3a2b4f;border-radius:10px;
+  outline:none;background:#15101e;color:white;
+  transition:.2s;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:#877d96}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--purple);
+  box-shadow:0 0 0 3px rgba(139,92,246,.13);
+}
+.form-group select option{background:#15101e;color:white}
+.form-group textarea{min-height:130px;resize:vertical}
+.whatsapp-submit{width:100%;padding:15px 18px}
+.whatsapp-submit:disabled{
+  opacity:.65;cursor:not-allowed;transform:none;
+}
+.form-note{margin-top:15px;color:#9e94ad;font-size:.82rem}
+#formStatus{color:var(--light);overflow-wrap:anywhere}
+
+footer{padding:46px 0 20px;background:#08060c}
+.footer-main{
+  display:grid;grid-template-columns:1.5fr 1fr 1fr;
+  gap:38px;padding-bottom:32px;
+}
+.footer-brand>p{
+  max-width:380px;margin-top:17px;
+  color:var(--muted);font-size:.9rem;
+}
+.footer-column h3{margin-bottom:14px;font-size:1rem}
+.footer-links{display:grid;gap:9px;list-style:none}
+.footer-links a{color:var(--muted);font-size:.9rem}
+.footer-links a:hover,.footer-bottom a:hover{color:var(--light)}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding-top:20px;border-top:1px solid #241833;
+}
+.footer-bottom p,.footer-bottom a{color:#91869f;font-size:.85rem}
+.reveal{animation:reveal-in .65s ease both}
+@keyframes reveal-in{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:1000px){
+  .contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .form-layout{grid-template-columns:1fr;gap:30px}
+  .footer-main{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:650px){
+  .nav-content{min-height:72px;flex-wrap:wrap}
+  .menu-toggle{display:block}
+  .nav-top{
+    display:flex;align-items:center;
+    justify-content:space-between;width:100%;
+  }
+  .nav-links{
+    display:none;width:100%;align-items:stretch;
+    flex-direction:column;gap:0;padding-bottom:12px;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:11px 5px}
+  .nav-links .nav-cta{text-align:center;margin-top:8px}
+  .brand-cta{padding:60px 15px}
+  .contact-grid{grid-template-columns:1fr}
+  .form-panel{padding:22px 17px}
+  .form-grid{grid-template-columns:1fr}
+  .form-group.full{grid-column:auto}
+  .footer-main{grid-template-columns:1fr}
+  .footer-brand{grid-column:auto}
+  .footer-bottom{align-items:flex-start;flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="container nav-content">
+    <div class="nav-top">
+      <a href="Home.html" class="logo">
+        <span class="logo-mark">❄</span>
+        <span>STAR COOL <span>SYSTEM</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle"
+        type="button" aria-label="Open navigation menu"
+        aria-expanded="false">☰</button>
+    </div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="Home.html">Home</a>
+      <a href="About.html">About Us</a>
+      <a href="Services.html">Services</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="#enquiry" class="nav-cta">Request a Service ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="brand-cta">
+  <span class="eyebrow">STAR COOL SYSTEM</span>
+  <h1>Let's Get Your <span class="gradient-text">Appliance Working</span></h1>
+  <p>
+    Tell us what's wrong with your AC, RO water purifier,
+    refrigerator or washing machine. Choose a contact option
+    or prepare a service enquiry below.
+  </p>
+  <a href="#enquiry" class="brand-btn">Request a Service ↓</a>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Choose How to <span class="gradient-text">Contact Us</span></h2>
+      <p>Contact Star Cool System for appliance service enquiries.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <article class="contact-card reveal">
+        <div class="contact-icon">❄️</div>
+        <h3>AC Service Enquiry</h3>
+        <p>Ask about AC repair, maintenance, installation or inspection.</p>
+        <a class="contact-link" href="#enquiry">Enquire About AC ↗</a>
+      </article>
+
+      <article class="contact-card reveal">
+        <div class="contact-icon">💬</div>
+        <h3>WhatsApp</h3>
+        <p>Message us about your appliance and describe the problem.</p>
+        <a class="contact-link" id="whatsappDirectLink"
+          href="https://wa.me/916379310200"
+          target="_blank" rel="noopener noreferrer">
+          Chat on WhatsApp ↗
+        </a>
+      </article>
+
+      <article class="contact-card reveal">
+        <div class="contact-icon">📞</div>
+        <h3>Call Us</h3>
+        <p>Contact the team about service availability and your appliance.</p>
+        <a class="contact-link" id="phoneDirectLink"
+          href="tel:+916379310200">Call the Business ↗</a>
+      </article>
+
+      <article class="contact-card reveal">
+        <div class="contact-icon">📧</div>
+        <h3>Email Us</h3>
+        <p>Send an email for service enquiries, questions or further information.</p>
+        <a class="contact-link" id="emailDirectLink"
+          href="mailto:starcoolsystemairconditioning@gmail.com?subject=Service%20Enquiry">
+          Send an Email ↗
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="enquiry">
+  <div class="container form-layout">
+
+    <div class="form-info reveal">
+      <span class="eyebrow">Service Request</span>
+      <h2>Tell Us About Your <span class="gradient-text">Appliance</span></h2>
+      <p>Choose one of our four supported appliances and describe the issue.</p>
+
+      <div class="form-info-list">
+        <span>❄ Air Conditioner (AC)</span>
+        <span>💧 RO Water Purifier</span>
+        <span>🧊 Refrigerator</span>
+        <span>🧺 Washing Machine</span>
+      </div>
+    </div>
+
+    <div class="form-panel reveal">
+      <h3>Request a Service</h3>
+      <p>Fill in your details to send your enquiry.</p>
+
+      <form id="serviceForm">
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="customerName">Your Name *</label>
+            <input type="text" id="customerName"
+              name="customerName" placeholder="Enter your name"
+              autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="customerPhone">Phone Number *</label>
+            <input type="tel" id="customerPhone"
+              name="customerPhone" placeholder="Enter your phone number"
+              autocomplete="tel" required>
+          </div>
+
+          <div class="form-group full">
+            <label for="customerEmail">Email Address (Optional)</label>
+            <input type="email" id="customerEmail"
+              name="customerEmail" placeholder="Enter your email address"
+              autocomplete="email">
+          </div>
+
+          <div class="form-group full">
+            <label for="appliance">Select Appliance *</label>
+            <select id="appliance" name="appliance" required>
+              <option value="">Choose appliance</option>
+              <option value="Air Conditioner (AC)">Air Conditioner (AC)</option>
+              <option value="RO Water Purifier">RO Water Purifier</option>
+              <option value="Refrigerator">Refrigerator</option>
+              <option value="Washing Machine">Washing Machine</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="serviceType">Service Required *</label>
+            <select id="serviceType" name="serviceType" required>
+              <option value="">Select a service</option>
+              <option value="Repair">Repair</option>
+              <option value="Maintenance">Maintenance</option>
+              <option value="Installation">Installation</option>
+              <option value="Inspection / Diagnosis">Inspection / Diagnosis</option>
+              <option value="Other / Not Sure">Other / Not Sure</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="location">Your Area / Location</label>
+            <input type="text" id="location" name="location"
+              placeholder="Enter your area or city"
+              autocomplete="address-level2">
+          </div>
+
+          <div class="form-group full">
+            <label for="problem">Describe the Problem *</label>
+            <textarea id="problem" name="problem"
+              placeholder="Describe your appliance problem..."
+              required></textarea>
+          </div>
+
+          <div class="form-group full">
+            <button type="submit" class="whatsapp-submit">
+              Submit Enquiry
+            </button>
+          </div>
+
+        </div>
+
+        <p class="form-note">
+          Your enquiry will be sent to Star Cool System by email.
+        </p>
+        <p class="form-note" id="formStatus"
+          role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <a href="Home.html" class="logo">
+          <span class="logo-mark">❄</span>
+          <span>STAR COOL <span>SYSTEM</span></span>
+        </a>
+        <p>
+          Star Cool System provides service enquiries for air conditioners,
+          RO water purifiers, refrigerators and washing machines.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="About.html">About Us</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact &amp; Services</h3>
+        <ul class="footer-links">
+          <li><a href="Services.html">Air Conditioner</a></li>
+          <li><a href="Services.html">RO Water Purifier</a></li>
+          <li><a href="Services.html">Refrigerator</a></li>
+          <li><a href="Services.html">Washing Machine</a></li>
+          <li>
+            <a id="footerEmail"
+              href="mailto:starcoolsystemairconditioning@gmail.com">
+              📧 Email Us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Star Cool System. All rights reserved.</p>
+      <a href="#">Back to Top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- EmailJS Browser SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+// =======================================
+// STAR COOL SYSTEM - CONTACT PAGE
+// =======================================
+
+// Business contact details
+const BUSINESS_WHATSAPP_NUMBER = "916379310200";
+const BUSINESS_EMAIL = "starcoolsystemairconditioning@gmail.com";
+
+// EmailJS credentials
+const EMAILJS_PUBLIC_KEY = "bY6VjRc-HX15mCXI9";
+const EMAILJS_SERVICE_ID = "service_starcool07635";
+const EMAILJS_TEMPLATE_ID = "template_a09zzjy";
+
+// Current year
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+// Mobile navigation
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu"
+  );
+
+  menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "☰";
+  });
+});
+
+// Direct contact links
+document.getElementById("whatsappDirectLink").href =
+  "https://wa.me/" + BUSINESS_WHATSAPP_NUMBER;
+
+document.getElementById("phoneDirectLink").href =
+  "tel:+" + BUSINESS_WHATSAPP_NUMBER;
+
+const emailURL = "mailto:" + BUSINESS_EMAIL +
+  "?subject=" + encodeURIComponent("Service Enquiry");
+
+document.getElementById("emailDirectLink").href = emailURL;
+document.getElementById("footerEmail").href =
+  "mailto:" + BUSINESS_EMAIL;
+
+// EmailJS initialization
+const formStatus = document.getElementById("formStatus");
+const serviceForm = document.getElementById("serviceForm");
+const submitButton =
+  serviceForm.querySelector('button[type="submit"]');
+
+let emailServiceReady = false;
+
+if (typeof emailjs !== "undefined") {
+  emailjs.init({
+    publicKey: EMAILJS_PUBLIC_KEY
+  });
+  emailServiceReady = true;
+} else {
+  console.error("EmailJS SDK failed to load.");
+  formStatus.textContent =
+    "Email service could not load. Check your internet connection and refresh.";
+}
+
+// Form submission
+serviceForm.addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  if (!serviceForm.reportValidity()) {
+    return;
+  }
+
+  if (!emailServiceReady || typeof emailjs === "undefined") {
+    formStatus.textContent =
+      "Email service is unavailable. Please refresh the page and try again.";
+    return;
+  }
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Sending Enquiry...";
+  formStatus.textContent = "Please wait. Sending your enquiry...";
+
+  try {
+    const response = await emailjs.sendForm(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      serviceForm
+    );
+
+    console.log("EmailJS success:", response);
+
+    formStatus.textContent =
+      "Thank you! Your enquiry has been sent successfully. Star Cool System will contact you soon.";
+
+    serviceForm.reset();
+
+  } catch (error) {
+    console.error("EmailJS sending error:", error);
+
+    const errorMessage =
+      error?.text || error?.message || "Unknown EmailJS error";
+
+    formStatus.textContent =
+      "Email could not be sent: " + errorMessage +
+      ". Please try again or contact Star Cool System directly.";
+
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = "Submit Enquiry";
+  }
+});
+</script>
+
+</body>
+</html>
